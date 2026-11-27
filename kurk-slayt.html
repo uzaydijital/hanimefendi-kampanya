@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kürk Kampanyası – Slayt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   Hanımefendi Butik · Efsane Cuma (kırmızı kampanya teması)
+   Font ve kart yapısı sitedeki ile aynı (Poppins)
+   ========================================================= */
+:root{
+  --kirmizi:#d3091f;
+  --kirmizi-koyu:#9c0618;
+  --bordo:#5e0410;
+  --sari:#ffd60a;
+  --pembe:#fb6f92;       /* sitedeki % rozeti */
+  --eski:#9a9a9a;
+  --beyaz:#fff;
+  --siyah:#111;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:transparent;font-family:'Poppins',-apple-system,system-ui,sans-serif;color:var(--siyah);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* ---------------- KAYAN YAZI ---------------- */
+.kayan{background:var(--bordo);color:var(--sari);overflow:hidden;white-space:nowrap;font-size:12px;font-weight:700;letter-spacing:.12em;padding:8px 0}
+.kayan-ic{display:inline-block;animation:kay 28s linear infinite}
+.kayan-ic span{margin:0 18px}
+.kayan-ic i{font-style:normal;color:#fff;margin:0 4px}
+@keyframes kay{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------------- SAYAÇ ---------------- */
+.sayac{display:flex;gap:6px;align-items:flex-start}
+.sayac .kutu{min-width:64px;padding:8px 4px 6px;text-align:center;background:var(--beyaz);border-radius:10px;box-shadow:0 4px 0 var(--bordo),0 8px 18px rgba(0,0,0,.25)}
+.sayac .sayi{display:block;font-weight:800;font-size:34px;line-height:1;color:var(--kirmizi);font-variant-numeric:tabular-nums}
+.sayac .etiket{display:block;margin-top:3px;font-size:9.5px;font-weight:600;letter-spacing:.08em;color:#555;text-transform:uppercase}
+.sayac .ayrac{font-weight:800;font-size:30px;color:var(--sari);line-height:1.25;animation:yanson 1s steps(2) infinite}
+@keyframes yanson{50%{opacity:.25}}
+
+/* ---------------- MOD 1: SLAYT ALANI ---------------- */
+.alan{position:relative;overflow:hidden;color:var(--beyaz);
+  background:
+    repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 14px,transparent 14px 28px),
+    radial-gradient(90% 120% at 15% 0%,#ef2238 0%,var(--kirmizi) 35%,var(--kirmizi-koyu) 75%,var(--bordo) 100%)}
+.filigran{position:absolute;right:-30px;top:20px;font-size:340px;font-weight:900;font-style:italic;line-height:.8;color:rgba(255,255,255,.05);pointer-events:none;user-select:none}
+
+.ust{position:relative;max-width:1280px;margin:0 auto;padding:30px 24px 22px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.ust-sol{display:flex;flex-direction:column;gap:8px}
+.son-gun{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;background:var(--beyaz);color:var(--kirmizi);font-size:12px;font-weight:800;letter-spacing:.12em;padding:6px 14px 6px 10px;border-radius:30px;text-transform:uppercase}
+.son-gun i{width:8px;height:8px;border-radius:50%;background:var(--kirmizi);animation:nabiz 1.2s infinite}
+@keyframes nabiz{0%{box-shadow:0 0 0 0 rgba(211,9,31,.7)}70%{box-shadow:0 0 0 9px rgba(211,9,31,0)}100%{box-shadow:0 0 0 0 rgba(211,9,31,0)}}
+.efsane{font-size:56px;font-weight:900;font-style:italic;line-height:.95;letter-spacing:-.01em;text-transform:uppercase;text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.teklif{display:flex;align-items:center;gap:14px;margin-top:4px}
+.damga{position:relative;background:var(--sari);color:var(--kirmizi-koyu);font-weight:900;font-size:44px;line-height:1;padding:8px 16px 6px;border-radius:12px;transform:rotate(-4deg);box-shadow:0 5px 0 #c9a400,0 10px 20px rgba(0,0,0,.25)}
+.damga small{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-align:center;margin-bottom:2px;color:var(--siyah)}
+.teklif-metin{font-size:20px;font-weight:700;line-height:1.2;text-transform:uppercase}
+.teklif-metin span{display:block;font-size:13px;font-weight:500;text-transform:none;opacity:.9;margin-top:4px}
+
+.ust-sag{display:flex;flex-direction:column;align-items:center;gap:12px}
+.ust-sag .baslikcik{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sari)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--sari);color:var(--siyah);font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:12px 26px;border-radius:30px;box-shadow:0 4px 0 #c9a400;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 #c9a400}
+.btn svg{width:16px;height:16px}
+
+.ray-kap{position:relative;max-width:1280px;margin:0 auto;padding:4px 24px 30px}
+.ray{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:4px 2px 8px}
+.ray::-webkit-scrollbar{display:none}
+.kart{flex:0 0 calc((100% - 4*14px)/5);min-width:0;scroll-snap-align:start;background:var(--beyaz);color:var(--siyah);border-radius:14px;padding:8px 8px 12px;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 8px 20px rgba(60,0,8,.35);transition:transform .25s}
+.kart:hover{transform:translateY(-4px)}
+.gorsel{position:relative;width:100%;aspect-ratio:2/3;overflow:hidden;border-radius:9px;background:#f9f9f9}
+.gorsel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s ease}
+.kart:hover .gorsel img{transform:scale(1.05)}
+.kurdele{position:absolute;top:18px;left:-38px;width:150px;text-align:center;transform:rotate(-45deg);background:var(--kirmizi);color:var(--beyaz);font-size:10px;font-weight:800;letter-spacing:.06em;padding:4px 0;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.sepet-serit{position:absolute;left:0;right:0;bottom:0;background:var(--kirmizi);color:var(--beyaz);font-size:12px;font-weight:700;padding:7px 4px;display:flex;justify-content:center;gap:6px;align-items:center}
+.sepet-serit b{background:var(--sari);color:var(--kirmizi-koyu);border-radius:6px;padding:1px 6px;font-weight:900}
+.kart h3{margin-top:10px;font-size:13.5px;font-weight:500;line-height:1.35;width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fiyat{margin-top:6px;display:flex;align-items:center;gap:8px}
+.rozet{background:var(--pembe);color:var(--beyaz);font-size:12px;font-weight:700;border-radius:9px;padding:7px 6px;line-height:1}
+.fiyatlar{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15}
+.fiyatlar s{color:var(--eski);font-size:13px}
+.fiyatlar b{color:var(--kirmizi);font-size:17px;font-weight:800}
+
+.ok{position:absolute;top:42%;width:40px;height:40px;border:0;background:var(--beyaz);color:var(--kirmizi);border-radius:50%;box-shadow:0 4px 12px rgba(0,0,0,.3);cursor:pointer;display:grid;place-items:center;z-index:2}
+.ok svg{width:18px;height:18px}
+.ok.sol{left:8px}.ok.sag{right:8px}
+
+.alt-satir{text-align:center;padding:0 24px 26px;position:relative}
+.tumu{display:inline-block;color:var(--beyaz);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--beyaz);border-radius:30px;padding:9px 26px;transition:background .2s,color .2s}
+.tumu:hover{background:var(--beyaz);color:var(--kirmizi)}
+
+.bitti .sayac{display:none}
+.bitti-yazi{display:none;font-size:15px;font-weight:600}
+.bitti .bitti-yazi{display:block}
+
+/* ---------------- MOD 2: KATEGORİ BANDI ---------------- */
+.bant{position:relative;overflow:hidden;color:var(--beyaz);
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.04) 0 12px,transparent 12px 24px),linear-gradient(90deg,var(--kirmizi-koyu),var(--kirmizi) 50%,var(--kirmizi-koyu))}
+.bant-ic{display:flex;align-items:center;justify-content:center;gap:26px;padding:12px 16px;flex-wrap:wrap;text-align:left}
+.bant .efsane{font-size:26px;line-height:1}
+.bant .alt{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--sari);text-transform:uppercase;margin-bottom:4px}
+.bant .damga{font-size:26px;padding:6px 10px 4px;border-radius:9px}
+.bant .damga small{font-size:8px}
+.bant .teklif-metin{font-size:15px}
+.bant .sayac .kutu{min-width:48px;padding:5px 3px 4px}
+.bant .sayac .sayi{font-size:22px}
+.bant .sayac .etiket{font-size:8px}
+.bant .sayac .ayrac{font-size:20px}
+.bant .btn{padding:10px 20px;font-size:12px}
+
+/* ---------------- MOBİL ---------------- */
+@media (max-width:1024px){ .kart{flex-basis:calc((100% - 3*14px)/4)} .efsane{font-size:46px} }
+@media (max-width:768px){
+  .ust{flex-direction:column;align-items:center;text-align:center;padding:22px 14px 16px;gap:16px}
+  .ust-sol{align-items:center}
+  .son-gun{align-self:center}
+  .efsane{font-size:40px}
+  .teklif{flex-direction:row;gap:12px;text-align:left}
+  .damga{font-size:34px}
+  .teklif-metin{font-size:16px}
+  .sayac .kutu{min-width:58px}.sayac .sayi{font-size:30px}
+  .filigran{font-size:220px;top:auto;bottom:40px}
+  .ray-kap{padding:0 12px 22px}
+  .kart{flex-basis:calc((100% - 14px)/2.15);padding:6px 6px 10px}
+  .kart h3{font-size:12.5px}
+  .fiyatlar b{font-size:15px}
+  .sepet-serit{font-size:10.5px}
+  .ok{display:none}
+  .bant-ic{gap:8px 12px;padding:10px;text-align:center}
+  .bant-ic > div:first-child{width:100%}
+  .bant .alt{margin-bottom:2px;font-size:10px}
+  .bant .teklif{justify-content:center;width:100%}
+  .bant .efsane{font-size:22px}
+  .bant .damga{font-size:22px}
+  .bant .teklif-metin{font-size:13px}
+  .bant .sayac .kutu{min-width:42px}
+  .bant .sayac .sayi{font-size:19px}
+  .bant .btn{padding:9px 14px;font-size:11px}
+}
+</style>
+</head>
+<body>
+<div id="kok"></div>
+
+<script>
+/* =========================================================
+   AYARLAR — kampanya değişince sadece burası düzenlenir
+   ========================================================= */
+var AYAR = {
+  site: "https://hanimefendibutik.com",
+  kategoriLink: "/kurk",
+  indirim: "%5",
+  // Bitiş: boş bırakılırsa her gün Türkiye saatiyle 23:59:59'da biter.
+  bitis: "2026-11-27T23:59:59+03:00",
+  urunler: [
+    { ad:"İtalyan Uzun Kürk SZR75 - SARI", eski:"₺ 8,499.99", fiyat:"₺ 6,799.99", oran:"%20", link:"/italyan-uzun-kurk-szr75-sari-1", gorsel:"c85a8009-2e8f-4d50-8f70-fde0dd72f339/720/img-3817.webp" },
+    { ad:"İtalyan Kısa Deri Kürk SZR35 - SİYAH", eski:"₺ 6,599.99", fiyat:"₺ 5,279.99", oran:"%20", link:"/italyan-kisa-deri-kurk-szr35-siyah-1", gorsel:"c47293a6-365d-4630-b819-47cbec78c2fd/720/img-3827.webp" },
+    { ad:"İtalyan Uzun Kürk ZR65 - BEYAZ", eski:"₺ 7,499.99", fiyat:"₺ 5,999.99", oran:"%20", link:"/italyan-uzun-kurk-zr65-beyaz-1", gorsel:"ff10bfbb-4e0c-4ecb-aed0-9a4293db112a/720/img-3447.webp" },
+    { ad:"İtalyan Kısa Deri Kürk SZR35 - GÜL KURUSU", eski:"₺ 6,599.99", fiyat:"₺ 5,279.99", oran:"%20", link:"/italyan-kisa-deri-kurk-szr35-gul-kurusu-1", gorsel:"148ab56f-10f9-4155-886a-2312bc0b7e34/720/img-3824.webp" },
+    { ad:"İtalyan Uzun Kürk ZR65 - VİŞNE ÇÜRÜĞÜ", eski:"₺ 7,499.99", fiyat:"₺ 5,999.99", oran:"%20", link:"/italyan-uzun-kurk-zr65-visne-curugu-1", gorsel:"caa6c2fa-5598-4e61-a4cb-8b72647c06e5/720/img-3456.webp" },
+    { ad:"İtalyan Kol Yaka Kürklü Kısa Kürk SRZ60 - BEJ", eski:"₺ 6,699.99", fiyat:"₺ 5,359.99", oran:"%20", link:"/italyan-kol-yaka-kurklu-kisa-kurk-srz60-bej-1", gorsel:"c2dfc84a-c026-4794-bc7d-02183b43faef/720/img-3474.webp" },
+    { ad:"İtalyan Uzun Kürk SZR75 - GRİ", eski:"₺ 8,499.99", fiyat:"₺ 6,799.99", oran:"%20", link:"/italyan-uzun-kurk-szr75-gri-1", gorsel:"416547a0-1aa3-47fc-83f1-f0244393bb48/720/img-3815.webp" },
+    { ad:"İtalyan Kollar Süet Kürk Ceket SZR60 - HAKİ", eski:"₺ 6,799.99", fiyat:"₺ 5,439.99", oran:"%20", link:"/italyan-kollar-suet-kurk-ceket-szr60-haki-1", gorsel:"480fcd91-ca0e-4b9f-a48a-e61556ff0368/720/img-3485.webp" },
+    { ad:"İtalyan Boncuk Pul İşlemeli Kürk Yelek - VİZON", eski:"₺ 3,999.99", fiyat:"₺ 3,199.99", oran:"%20", link:"/italyan-boncuk-pul-islemeli-kurk-yelek-vizon-1", gorsel:"985fb16b-a447-4a59-b25e-2fa6e9d70f44/720/img-3251.webp" }
+  ]
+};
+var CDN = "https://cdn.myikas.com/images/17d8cad2-13cd-4183-b37a-a969c40d0287/";
+
+/* ========================================================= */
+var q = new URLSearchParams(location.search);
+var MOD = "slayt";
+if (q.get("bitis")) AYAR.bitis = q.get("bitis");
+function url(y){ return /^https?:\/\//.test(y) ? y : AYAR.site + y; }
+function gorsel(g){ return /^https?:\/\//.test(g) ? g : CDN + g; }
+
+var okSol = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 6l-6 6 6 6"/></svg>';
+var okSag = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>';
+var sayacHTML =
+  '<div class="sayac" aria-live="polite">'+
+  '<div class="kutu"><span class="sayi" data-s="sa">00</span><span class="etiket">Saat</span></div><span class="ayrac">:</span>'+
+  '<div class="kutu"><span class="sayi" data-s="dk">00</span><span class="etiket">Dakika</span></div><span class="ayrac">:</span>'+
+  '<div class="kutu"><span class="sayi" data-s="sn">00</span><span class="etiket">Saniye</span></div></div>';
+var damga = '<div class="damga"><small>EKSTRA</small>'+AYAR.indirim+'</div>';
+
+var kok = document.getElementById("kok");
+
+if (MOD === "slayt") {
+  var parca = '<span>EFSANE CUMA</span><i>✦</i><span>KÜRKLERDE SEPETTE EKSTRA '+AYAR.indirim+'</span><i>✦</i><span>SADECE BUGÜN</span><i>✦</i><span>KASIM İNDİRİMLERİ</span><i>✦</i>';
+  var kartlar = AYAR.urunler.map(function(u){
+    return '<a class="kart" target="_top" href="'+url(u.link)+'">'+
+      '<div class="gorsel"><img loading="lazy" alt="'+u.ad+'" src="'+gorsel(u.gorsel)+'">'+
+      '<span class="kurdele">EFSANE CUMA</span>'+
+      '<span class="sepet-serit">Sepette ekstra <b>'+AYAR.indirim+'</b></span></div>'+
+      '<h3>'+u.ad+'</h3>'+
+      '<div class="fiyat">'+(u.oran?'<span class="rozet">'+u.oran+'</span>':'')+
+      '<div class="fiyatlar">'+(u.eski?'<s>'+u.eski+'</s>':'')+'<b>'+u.fiyat+'</b></div></div></a>';
+  }).join("");
+
+  kok.innerHTML =
+  '<section class="alan" id="alan">'+
+    '<div class="kayan"><div class="kayan-ic">'+parca+parca+parca+parca+'</div></div>'+
+    '<div class="filigran">%5</div>'+
+    '<div class="ust">'+
+      '<div class="ust-sol">'+
+        '<span class="son-gun"><i></i>Son gün · Bu gece bitiyor</span>'+
+        '<h2 class="efsane">Efsane Cuma</h2>'+
+        '<div class="teklif">'+damga+'<div class="teklif-metin">Kürklerde sepette<br>ekstra indirim<span>Tüm kürk grubunda, mevcut indirimlere ek.</span></div></div>'+
+      '</div>'+
+      '<div class="ust-sag">'+
+        '<span class="baslikcik">⏰ Kampanyanın bitmesine</span>'+ sayacHTML +
+        '<span class="bitti-yazi">Kampanya sona erdi — kürk koleksiyonu seni bekliyor.</span>'+
+        '<a class="btn" target="_top" href="'+url(AYAR.kategoriLink)+'">Kürkleri Keşfet '+okSag+'</a>'+
+      '</div>'+
+    '</div>'+
+    '<div class="ray-kap"><button class="ok sol" data-yon="-1" aria-label="Önceki">'+okSol+'</button>'+
+      '<div class="ray" id="ray">'+kartlar+'</div>'+
+      '<button class="ok sag" data-yon="1" aria-label="Sonraki">'+okSag+'</button></div>'+
+    '<div class="alt-satir"><a class="tumu" target="_top" href="'+url(AYAR.kategoriLink)+'">Tüm Kürkleri Gör</a></div>'+
+  '</section>';
+
+  var ray = document.getElementById("ray");
+  function adim(){ return ray.querySelector(".kart").offsetWidth + 14; }
+  document.querySelectorAll(".ok").forEach(function(b){
+    b.addEventListener("click", function(){ ray.scrollBy({left: adim() * +b.dataset.yon, behavior:"smooth"}); });
+  });
+  var dur = false;
+  ray.addEventListener("mouseenter", function(){ dur = true; });
+  ray.addEventListener("mouseleave", function(){ dur = false; });
+  ray.addEventListener("touchstart", function(){ dur = true; }, {passive:true});
+  setInterval(function(){
+    if (dur) return;
+    if (ray.scrollLeft + ray.clientWidth >= ray.scrollWidth - 4) ray.scrollTo({left:0, behavior:"smooth"});
+    else ray.scrollBy({left:adim(), behavior:"smooth"});
+  }, 3500);
+} else {
+  kok.innerHTML =
+  '<section class="bant" id="alan"><div class="bant-ic">'+
+    '<div><span class="alt">🔥 Son gün · Bu gece bitiyor</span><span class="efsane">Efsane Cuma</span></div>'+
+    '<div class="teklif">'+damga+'<div class="teklif-metin">Kürklerde<br>sepette ekstra</div></div>'+
+    sayacHTML +
+    '<a class="btn" target="_top" href="'+url(AYAR.kategoriLink)+'">Kürklere Git '+okSag+'</a>'+
+  '</div></section>';
+}
+
+/* ---------------- SAYAÇ ---------------- */
+function bitisZamani(){
+  if (AYAR.bitis) return new Date(AYAR.bitis).getTime();
+  var tr = new Date(Date.now() + 3*3600e3);
+  return Date.UTC(tr.getUTCFullYear(), tr.getUTCMonth(), tr.getUTCDate(), 23, 59, 59) - 3*3600e3;
+}
+var hedef = bitisZamani();
+var el = { sa:document.querySelector('[data-s="sa"]'), dk:document.querySelector('[data-s="dk"]'), sn:document.querySelector('[data-s="sn"]') };
+function iki(n){ return (n<10?"0":"")+n; }
+function tik(){
+  var k = Math.max(0, Math.floor((hedef - Date.now())/1000));
+  el.sa.textContent = iki(Math.floor(k/3600));
+  el.dk.textContent = iki(Math.floor(k%3600/60));
+  el.sn.textContent = iki(k%60);
+  if (k <= 0) { document.getElementById("alan").classList.add("bitti"); clearInterval(t); boyutGonder(); }
+}
+var t = setInterval(tik, 1000); tik();
+
+/* ---------------- iFRAME YÜKSEKLİĞİ ---------------- */
+function boyutGonder(){
+  try { parent.postMessage({ tip:"kurk-kampanya-yukseklik", mod:MOD, h: document.documentElement.scrollHeight }, "*"); } catch(e){}
+}
+window.addEventListener("load", boyutGonder);
+window.addEventListener("resize", boyutGonder);
+document.querySelectorAll("img").forEach(function(i){ i.addEventListener("load", boyutGonder); });
+</script>
+</body>
+</html>
