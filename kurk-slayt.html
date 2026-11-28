@@ -153,7 +153,8 @@ var AYAR = {
   kategoriLink: "/kurk",
   indirim: "%5",
   // Bitiş: boş bırakılırsa her gün Türkiye saatiyle 23:59:59'da biter.
-  bitis: "2026-11-27T23:59:59+03:00",
+  // Boş = her gece 00:00'da (Türkiye saati) sıfırlanır, yeniden 24 saat sayar.
+  bitis: "",
   urunler: [
     { ad:"İtalyan Uzun Kürk SZR75 - SARI", eski:"₺ 8,499.99", fiyat:"₺ 6,799.99", oran:"%20", link:"/italyan-uzun-kurk-szr75-sari-1", gorsel:"c85a8009-2e8f-4d50-8f70-fde0dd72f339/720/img-3817.webp" },
     { ad:"İtalyan Kısa Deri Kürk SZR35 - SİYAH", eski:"₺ 6,599.99", fiyat:"₺ 5,279.99", oran:"%20", link:"/italyan-kisa-deri-kurk-szr35-siyah-1", gorsel:"c47293a6-365d-4630-b819-47cbec78c2fd/720/img-3827.webp" },
@@ -254,6 +255,8 @@ var hedef = bitisZamani();
 var el = { sa:document.querySelector('[data-s="sa"]'), dk:document.querySelector('[data-s="dk"]'), sn:document.querySelector('[data-s="sn"]') };
 function iki(n){ return (n<10?"0":"")+n; }
 function tik(){
+  // Günlük modda gece yarısı geçince bir sonraki günün sonuna kur (sayfa açık kalsa bile)
+  if (!AYAR.bitis && Date.now() >= hedef) hedef = bitisZamani();
   var k = Math.max(0, Math.floor((hedef - Date.now())/1000));
   el.sa.textContent = iki(Math.floor(k/3600));
   el.dk.textContent = iki(Math.floor(k%3600/60));

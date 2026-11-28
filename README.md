@@ -1,6 +1,6 @@
 # Hanımefendi Butik · Efsane Cuma Kürk Kampanyası
 
-İki ayrı parça, ikas'a ayrı ayrı eklenir. Sayaç **27 Kasım 2026 23:59:59 (Türkiye saati)** ile biter.
+İki ayrı parça, ikas'a ayrı ayrı eklenir. Sayaç **her gece 00:00'da (Türkiye saati) sıfırlanır** ve yeniden 24 saat geri sayar. Sabit bir bitiş için `AYAR.bitis`'e tarih yazılır (örn. `"2026-11-30T23:59:59+03:00"`).
 
 | Dosya | Adres | Nereye |
 |---|---|---|
@@ -39,4 +39,4 @@ Script eklenemezse sadece `<iframe>` satırı yeterli (yükseklik sabit kalır; 
 Sayaç sadece duyurudur. %5'in sepette düşmesi için ikas → Pazarlama → Kampanyalar → Sepette indirim, koşul *Kategori = Kürk*, %5, 27.11.2026 23:59'a kadar.
 
 ## Ürün / tarih değiştirme
-Her dosyanın içindeki `AYAR` bloğu: `bitis` (bitiş zamanı), `urunler` (ad, fiyat, link, görsel), `kategoriLink`. GitHub'da dosyayı ✏️ ile düzenleyip Commit'lemek yeterli; ikas tarafına dokunmaya gerek yok.
+Her dosyanın içindeki `AYAR` bloğu: `bitis` (boş = her gece sıfırlanır), `urunler` (ad, fiyat, link, görsel), `kategoriLink`. GitHub'da dosyayı ✏️ ile düzenleyip Commit'lemek yeterli; ikas tarafına dokunmaya gerek yok.
